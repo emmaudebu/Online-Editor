@@ -4,29 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Online-Editor</title>
 </head>
 <body>
 
     <section class="container">
         <div class="left">
-            <label for="">HTML</label>
-            <textarea id="html-code"></textarea>
-            <label for="">CSS</label>
-            <textarea id="css-code"></textarea>
-            <label for="">JAVASCRIPT</label>
-            <textarea id="js-code"></textarea>
+            <label for=""> <i class='bx bxl-html5'></i>HTML</label>
+            <textarea id="htmlCode" onkeyup="run()"></textarea>
+            <label for=""><i class='bx bxl-css3'></i>CSS</label>
+            <textarea id="cssCode" onkeyup="run()"></textarea>
+            <label for=""><i class='bx bxl-javascript'></i>JAVASCRIPT</label>
+            <textarea id="jsCode"></textarea>
         </div>
         <div class="right">
-            <iframe src="" frameborder="0" id="output"></iframe>
+            <label for=""><i class='bx bx-play-circle'></i>OUTPUT</label>
+            <iframe id="output"> </iframe>
         </div>
 
     </section>
+    <script>
+function run() {
     
+    let htmlCode = document.getElementById("htmlCode").value;
+    let cssCode = document.getElementById('cssCode').value;
+    let jsCode = document.getElementById('jsCode').value;
+    let output = document.getElementById('output');
+
+    output.contentDocument.body.innerHTML=htmlCode+"<style>"+cssCode +"</style";
+   
+}
 
 
 
-
-    <script src="./main.js"></script>
+    </script>
 </body>
 </html>
